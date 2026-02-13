@@ -1,0 +1,9 @@
+pandas
+seaborn
+matplotlib
+numpy
+scikit-learn
+missingno
+plotly
+nbformat
+notebook
