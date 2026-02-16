@@ -3,7 +3,6 @@ import seaborn as sns
 import numpy as np
 import plotly.express as px
 import plotly.io as pio
-import pandas as pd
 
 # Use browser renderer if nbformat issues occur
 # pio.renderers.default = "browser"
@@ -156,36 +155,31 @@ def screen_plot(pca_data, scaled_data=""):
     plt.grid(True)
     plt.show()
 
-def scatter_plot2D(data, title=""):
+def scatter_plot2D(data, color=None, title="2D Scatter Plot"):
     plt.figure(figsize=(8,6))
-    plt.scatter(data[:,0], data[:,1], alpha=0.6)
+    if color is not None:
+        scatter = plt.scatter(data[:,0], data[:,1], c=color, cmap='tab10', alpha=0.6)
+        plt.legend(*scatter.legend_elements(), title="Clusters")
+    else:
+        plt.scatter(data[:,0], data[:,1], alpha=0.6)
+        
     plt.title(title)
     plt.xlabel("Component 1")
     plt.ylabel("Component 2")
     plt.grid(True)
     plt.show()
 
-def scatter_plot3D(data, labels=None, title="PCA Scatter Plot"):
-    
-    df = pd.DataFrame(data[:, :3], columns=["PC1", "PC2", "PC3"])
-    
-    if labels is not None:
-        df["Cluster"] = labels
-        fig = px.scatter_3d(
-            df,
-            x="PC1",
-            y="PC2",
-            z="PC3",
-            color="Cluster",
-            title=title
-        )
-    else:
-        fig = px.scatter_3d(
-            df,
-            x="PC1",
-            y="PC2",
-            z="PC3",
-            title=title
-        )
+
+def scatter_plot3D(data, color=None, title="3D Scatter Plot"):
+    x, y, z = data[:, :3].T
+    fig = px.scatter_3d(
+        x=x,
+        y=y,
+        z=z,
+        color=color,
+        title=title,
+        labels={"x": "PC1", "y": "PC2", "z": "PC3"},
+        color_discrete_sequence=px.colors.qualitative.Bold if color is not None else None
+    )
     
     fig.show()
