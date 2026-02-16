@@ -155,8 +155,17 @@ def screen_plot(pca_data, scaled_data=""):
     plt.grid(True)
     plt.show()
 
-def scatter_plot3D(pca_data, title="PCA Scatter Plot"):
-    x, y, z = pca_data[:,:3].T
+def scatter_plot2D(data, title=""):
+    plt.figure(figsize=(8,6))
+    plt.scatter(data[:,0], data[:,1], alpha=0.6)
+    plt.title(title)
+    plt.xlabel("Component 1")
+    plt.ylabel("Component 2")
+    plt.grid(True)
+    plt.show()
+
+def scatter_plot3D(data, title="PCA Scatter Plot"):
+    x, y, z = data[:,:3].T
     fig = px.scatter_3d(x = x, 
                         y = y, 
                         z = z,

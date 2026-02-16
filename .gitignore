@@ -5,6 +5,7 @@ __pycache__/
 # Ignore virtual environment
 venv/
 env/
+cust_seg_env/
 
 # Ignore logs
 *.log
@@ -14,7 +15,7 @@ env/
 Thumbs.db
 
 dataset/CC_GENERAL_log1p.csv
-dataset/CC_GENERAL_log2.csv
 
 questions.txt
 transformers/
+References/
