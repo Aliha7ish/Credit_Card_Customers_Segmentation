@@ -14,7 +14,7 @@ cust_seg_env/
 .DS_Store
 Thumbs.db
 
-dataset/CC_GENERAL_log1p.csv
+dataset/preprocessed/CC_GENERAL_log1p.csv
 
 questions.txt
 References/

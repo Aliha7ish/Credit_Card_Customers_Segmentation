@@ -3,6 +3,7 @@ import seaborn as sns
 import numpy as np
 import plotly.express as px
 import plotly.io as pio
+import pandas as pd
 
 # Use browser renderer if nbformat issues occur
 # pio.renderers.default = "browser"
@@ -164,12 +165,27 @@ def scatter_plot2D(data, title=""):
     plt.grid(True)
     plt.show()
 
-def scatter_plot3D(data, title="PCA Scatter Plot"):
-    x, y, z = data[:,:3].T
-    fig = px.scatter_3d(x = x, 
-                        y = y, 
-                        z = z,
-                        title=title,
-                        labels={"x": "PC1", "y": "PC2", "z": "PC3"})
+def scatter_plot3D(data, labels=None, title="PCA Scatter Plot"):
+    
+    df = pd.DataFrame(data[:, :3], columns=["PC1", "PC2", "PC3"])
+    
+    if labels is not None:
+        df["Cluster"] = labels
+        fig = px.scatter_3d(
+            df,
+            x="PC1",
+            y="PC2",
+            z="PC3",
+            color="Cluster",
+            title=title
+        )
+    else:
+        fig = px.scatter_3d(
+            df,
+            x="PC1",
+            y="PC2",
+            z="PC3",
+            title=title
+        )
     
     fig.show()
