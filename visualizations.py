@@ -183,3 +183,4 @@ def scatter_plot3D(data, color=None, title="3D Scatter Plot"):
     )
     
     fig.show()
+
