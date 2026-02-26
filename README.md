@@ -151,6 +151,16 @@ PCA significantly improved interpretability and stability.
 
 ---
 
+## 📈 Model Comparison & Visual Validation
+
+| Model        | Observations | Cluster Visualization |
+|--------------|-------------|-----------------------|
+| **OPTICS**   | Over-fragmented clusters with significant overlap. Generated 50+ micro-clusters, reducing interpretability. | <img src="./assets/optics%20clusters.png" width="80%"> |
+| **DBSCAN**   | More reasonable segmentation than OPTICS, but some clusters (7, 8, 9) appear close and potentially mergeable. | <img src="./assets/dbscan%20clusters.png" width="80%"> |
+| **HDBSCAN ✅** | Best structural separation, limited overlap, and commercially interpretable segmentation (~8 meaningful clusters). | <img src="./assets/hdbscan%20clusters.png" width="80%"> |
+
+---
+
 # 🏁 Final Model Decision
 
 > **HDBSCAN trained on PCA-reduced data (6 components, 93% variance).**
@@ -297,17 +307,6 @@ The portfolio divides into:
 - Liquidity-dependent borrowers → Clusters 2 & 3
 - Reactivation candidates → Cluster 1
 - High-exposure outliers → Cluster -1
-
----
-
-# 📈 Evaluation Metrics
-
-| Model      | Observations | Cluster Visualization |
-|------------|-------------|-----------------------|
-| OPTICS     | Over-fragmented clusters with significant overlap. Generated 50+ micro-clusters, reducing interpretability. | <img src="./assets/optics clusters.png" width="60%">
- |
-| DBSCAN     | More reasonable segmentation than OPTICS, but some clusters (7, 8, 9) appear close and potentially mergeable. | <img src="./assets/dbscan clusters.png" width="60%"> |
-| HDBSCAN ✅ | Best structural separation, limited overlap, and commercially interpretable segmentation (~8 meaningful clusters). | <img src="./assets/hdbscan clusters.png" width="60%"> |
 
 ---
 
