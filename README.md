@@ -318,6 +318,7 @@ The portfolio divides into:
 - Scikit-learn
 - HDBSCAN
 - Matplotlib
+- Plotly
 - Seaborn
 - PCA
 - t-SNE (visual validation)
