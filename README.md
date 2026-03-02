@@ -2,7 +2,7 @@
 ### Production-Grade Customer Segmentation & Portfolio Strategy
 
 <p align="center">
-  <a href="https://drive.google.com/file/d/1S8w00yehFKdCy15NFTNaNKEXVx2MEO_P/view?usp=sharing">
+  <a href="https://drive.google.com/file/d/1S8w00yehFKdCy15NFTNaNKEXVx2MEO_P/view?usp=sharing" target="_blank">
     <img src="https://img.shields.io/badge/📄%20Project%20Report-View%20PDF-red?style=for-the-badge">
   </a>
 </p>
