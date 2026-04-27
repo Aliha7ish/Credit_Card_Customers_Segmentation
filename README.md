@@ -1,4 +1,4 @@
-# 📊 Credit Card Customers Segmentation  
+# Credit Card Customers Segmentation  
 ### Production-Grade Customer Segmentation & Portfolio Strategy
 
 <p align="center">
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎯 Executive Overview
+## Executive Overview
 
 This project applies advanced unsupervised learning techniques to segment credit card customers based on behavioral and financial patterns.
 
@@ -24,7 +24,7 @@ The final output is a deployable segmentation pipeline with clear commercial int
 
 ---
 
-# 🧠 Business Problem
+# Business Problem
 
 Financial institutions manage diverse customer portfolios with varying:
 
@@ -44,7 +44,7 @@ This project builds a structured segmentation framework to:
 
 ---
 
-# 📊 Dataset Overview
+# Dataset Overview
 
 - ~9,000 credit card customers  
 - 6 months of behavioral history  
@@ -65,9 +65,9 @@ Dataset file: `dataset/raw/CC GENERAL.csv`
 
 ---
 
-# ⚙️ Methodology
+# Methodology
 
-## 1️⃣ Data Preprocessing Pipeline
+## Data Preprocessing Pipeline
 
 To ensure structural stability and noise reduction:
 
@@ -92,7 +92,7 @@ HDBSCAN Clustering
 
 ---
 
-# 🔬 Model Selection Strategy
+# Model Selection Strategy
 
 We evaluated:
 
@@ -107,7 +107,7 @@ Across:
 
 ---
 
-## 📉 PCA Justification
+## PCA Justification
 
 <p align="center">
   <img src="./assets/PCA&apos;s Across Different Scaling Techniques.png" width="100%">
@@ -125,20 +125,20 @@ PCA significantly improved interpretability and stability.
 
 ---
 
-## 🧪 Model Comparison Summary
+## Model Comparison Summary
 
-### 🔹 OPTICS
+### OPTICS
 - Generated 50+ clusters
 - High overlap
 - Over-fragmented segmentation
 - Poor business usability
 
-### 🔹 DBSCAN
+### DBSCAN
 - More reasonable cluster count
 - Some overlapping clusters (7, 8, 9)
 - t-SNE suggests potential merging
 
-### 🔹 HDBSCAN ✅ (Selected Model)
+### HDBSCAN (Selected Model)
 - 9 clusters (including outliers)
 - Clear separation
 - Limited overlap
@@ -157,17 +157,17 @@ PCA significantly improved interpretability and stability.
 
 ---
 
-## 📈 Model Comparison & Visual Validation
+## Model Comparison & Visual Validation
 
 | Model        | Observations | Cluster Visualization |
 |--------------|-------------|-----------------------|
 | **OPTICS**   | Over-fragmented clusters with significant overlap. Generated 50+ micro-clusters, reducing interpretability. | <img src="./assets/optics%20clusters.png" width="80%"> |
 | **DBSCAN**   | More reasonable segmentation than OPTICS, but some clusters (7, 8, 9) appear close and potentially mergeable. | <img src="./assets/dbscan%20clusters.png" width="80%"> |
-| **HDBSCAN ✅** | Best structural separation, limited overlap, and commercially interpretable segmentation (~8 meaningful clusters). | <img src="./assets/hdbscan%20clusters.png" width="80%"> |
+| **HDBSCAN** | Best structural separation, limited overlap, and commercially interpretable segmentation (~8 meaningful clusters). | <img src="./assets/hdbscan%20clusters.png" width="80%"> |
 
 ---
 
-# 🏁 Final Model Decision
+# Final Model Decision
 
 > **HDBSCAN trained on PCA-reduced data (6 components, 93% variance).**
 
@@ -181,7 +181,7 @@ This model offers:
 
 ---
 
-# 📌 Customer Segmentation & Strategic Actions
+# Customer Segmentation & Strategic Actions
 
 The segmentation produces 6 core behavioral archetypes.
 
@@ -303,7 +303,7 @@ Very low credit risk.
 
 ---
 
-# 📊 Portfolio-Level Strategic Summary
+# Portfolio-Level Strategic Summary
 
 The portfolio divides into:
 
@@ -316,7 +316,7 @@ The portfolio divides into:
 
 ---
 
-# 🛠 Tech Stack
+# Tech Stack
 
 - Python
 - NumPy
@@ -331,7 +331,7 @@ The portfolio divides into:
 
 ---
 
-# 🚀 Production Value
+# Production Value
 
 This project demonstrates:
 
@@ -344,9 +344,9 @@ This project demonstrates:
 
 ---
 
-# 📌 Author
+# Author
 
-Ali Hashish  
+**Ali Hashish**
 Machine Learning Engineer  
 
 ---
